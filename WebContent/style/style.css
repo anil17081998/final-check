@@ -1,1 +1,113 @@
-/* Add styles for application here */
+
+body {
+	height:100%;
+}
+
+header {
+  background-color: #596deb;
+  height : 50px;
+  color : #ffffff;
+}
+.content {
+  height : 780px;
+  border: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+footer {
+	background-color: #dcdede;
+	height : 50px;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+img {
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin-left: 20px;
+}
+#movie {
+	float: right;
+	margin-right: 20px;
+	margin-left:20px;
+	margin-top: 10px;
+	color: #ffffff;
+	
+}
+span {
+	margin-left: 20px;
+	margin-top: 10px;
+	float: left;
+	font-size: 18pt;
+}
+h2, table {
+	margin-left: 50px;
+	margin-top: 50px;
+}
+.align-left{
+	text-align: left;
+	width: 150px;
+}
+.align-right {
+	text-align: right;
+	width: 100px;
+}
+.align-cent {
+	text-align: center;
+	width: 125px;
+}
+.bt {
+	background-color: #2f6ecc;
+	color: #ffffff;
+	width: 150px;
+	height: 50px;
+}
+.font-color {
+	color: #16c955;
+	font-size: 13pt;
+	padding: 10px;
+	margin-left: 50px;
+	font-weight: bold;
+}
+.cen {
+	padding: 10px;
+	margin-top: 50px;
+	margin-left: 50px;
+}
+.sucess {
+	color: #16c955;
+	font-size: 15pt;
+	padding: 10px;
+	font-style: bold;
+	text-align:center;
+}
+.align-bot {
+	text-align: bottom;
+	height: 125px;
+	
+}
+.empty {
+	color: #707273;
+	font-size: 15pt;
+	margin-left: 50px;
+	margin-top: 35px;
+}
+.menu-item {
+	color: #0cb7f5;
+	margin-top: 35px;
+}
+.table-head {
+	color: #4a4949;
+	font-style: bold;
+	
+}
+h4 {
+	font-weight: normal;
+	margin-left: 0px;	
+}
+a {
+	color: #000000;
+}
+	
