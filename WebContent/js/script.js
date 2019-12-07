@@ -27,5 +27,5 @@ function validation() {
 		alert("Select one genre");
 		return false;
 	}
-}
+	}
 	
