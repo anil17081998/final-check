@@ -40,7 +40,7 @@ public class AddToFavoriteServlet extends HttpServlet {
 			request.setAttribute("addFavoriteStatus", "Item Added to Favorite Successfully.");
 			request.getRequestDispatcher("ShowMovieListCustomer").forward(request, response);
 		} catch (Exception ex) {
-			
+			 ex.printStackTrace(); 
 		}
 	}
 

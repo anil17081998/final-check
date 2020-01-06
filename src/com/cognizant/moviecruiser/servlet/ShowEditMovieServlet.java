@@ -41,8 +41,8 @@ public class ShowEditMovieServlet extends HttpServlet {
 			request.setAttribute("movie", movie);
 			RequestDispatcher rd = request.getRequestDispatcher("edit-movie.jsp");
 			rd.forward(request, response);
-		} catch (Exception Ex) {
-			
+		} catch (Exception ex) {
+			 ex.printStackTrace(); 
 		}
 	}
 
