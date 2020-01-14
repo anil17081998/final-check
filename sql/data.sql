@@ -4,6 +4,7 @@
 -- -----------------------------------------------------
 -- Admin Movie List
 -- -----------------------------------------------------
+
 insert into movie
 values
 (1,'Avatar',2787965087,'Yes','2017-03-15','Science Fiction','Yes'),
@@ -13,7 +14,12 @@ values
 (5,'Avengers End Game',2750760348,'Yes','2022-11-02','Superhero','Yes');
 
 
-select * from movie;
+select mov_title as Title,
+mov_box_office as Box_Office,
+mov_active as Active,
+mov_date_of_launch as Date_Of_Launch,
+mov_genre as Genre,
+mov_has_teaser as Has_Teaser from movie;
 
 -- -----------------------------------------------------
 -- Update Movie List
@@ -25,11 +31,24 @@ mov_box_office=150989777,mov_genre='Superhero'
 where mov_id=1;
 
 -- -----------------------------------------------------
+-- View Updated Movie List
+-- -----------------------------------------------------
+
+select mov_title as Title,
+mov_box_office as Box_Office,
+mov_active as Active,
+mov_date_of_launch as Date_Of_Launch,
+mov_genre as Genre,
+mov_has_teaser as Has_Teaser from movie;
+
+-- -----------------------------------------------------
 -- Customer Movie List
 -- -----------------------------------------------------
 
-
-select mov_title,mov_box_office,mov_genre,mov_has_teaser
+select mov_title as Title,
+mov_box_office as Box_Office,
+mov_genre as Genre,
+mov_has_teaser as Has_Teaser
 from movie
 where mov_active='Yes' and 
 mov_date_of_launch <= current_date();
@@ -43,20 +62,45 @@ insert into user
 values(1,'anil123'),
 (2,'user007'),(3,'vibu');
 
-select * from user;
-select * from favorite;
+-- -----------------------------------------------------
+-- View User
+-- -----------------------------------------------------
+
+select us_id as User_Id,
+us_name as User_Name 
+from user;
 
 -- -----------------------------------------------------
--- Favorites
+-- view Favorite
+-- -----------------------------------------------------
+
+select fav_Id as Id,
+fav_us_id as User_Id,
+fav_mov_id as Movie_Id 
+from favorite;
+
+-- -----------------------------------------------------
+-- Add To Favorite
 -- -----------------------------------------------------
 
 insert into favorite (fav_us_id,fav_mov_id) 
 values(2,1),(2,2),(2,5),(2,1),(1,1),(1,4);
 
+-- -----------------------------------------------------
+-- Favorites
+-- -----------------------------------------------------
 
-
-select mov_title,mov_box_office,mov_genre 
+select mov_title as Title,
+mov_box_office as Box_Office,
+mov_genre as Genre
 from movie
+inner join favorite on fav_mov_id=mov_id
+where fav_us_id=2; 
+
+-- -----------------------------------------------------
+-- No of Favorites
+-- -----------------------------------------------------
+select count(mov_title) as No_of_favorites from movie
 inner join favorite on fav_mov_id=mov_id
 where fav_us_id=2; 
 
@@ -64,9 +108,19 @@ where fav_us_id=2;
 -- Delete Favorite
 -- -----------------------------------------------------
 
-
 delete from favorite 
 where fav_us_id=2 and fav_mov_id=1 limit 1; 
+
+-- -----------------------------------------------------
+-- View Favorites After Removing
+-- -----------------------------------------------------
+
+select mov_title as Title,
+mov_box_office as Box_Office,
+mov_genre as Genre
+from movie
+inner join favorite on fav_mov_id=mov_id
+where fav_us_id=2; 
 
 -- -----------------------------------------------------
 -- No of Favorites
