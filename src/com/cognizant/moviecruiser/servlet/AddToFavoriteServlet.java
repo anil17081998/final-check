@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cognizant.moviecruiser.dao.FavoriteDao;
 import com.cognizant.moviecruiser.dao.FavoriteDaoCollectionImpl;
+import com.cognizant.moviecruiser.dao.FavoriteDaoSqlImpl;
 
 /**
  * Servlet implementation class AddToFavoriteServlet
@@ -35,7 +36,7 @@ public class AddToFavoriteServlet extends HttpServlet {
 		try {
 			long userId = 1L;
 			long movieId = Long.parseLong(request.getParameter("movieId"));
-			FavoriteDao favoriteDao = new FavoriteDaoCollectionImpl();
+			FavoriteDao favoriteDao = new FavoriteDaoSqlImpl();
 			favoriteDao.addFavorite(userId, movieId);
 			request.setAttribute("addFavoriteStatus", "Item Added to Favorite Successfully.");
 			request.getRequestDispatcher("ShowMovieListCustomer").forward(request, response);
